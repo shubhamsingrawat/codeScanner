@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type='text/css' href="#">
+    <title>YT_downloader</title>
+</head>
+<body>
+    <div class='container-fluid'>
+        <div class="row" style="background-color:rgb(22, 21, 21);">
+            <div class="col-sm-12 mt-1 mb-1" style="font-family:'Comic Sans MS'; font-size: 30px; color: aliceblue; text-align: center;">
+              <b>Welcome to code genrator</b>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="" action="/home/search" method="post">
+                    <div class="row" style="margin-top:20px;">
+                      {% csrf_token %}
+                        <div class="col-sm-10">
+                          <input class="form-control" type="text-box" name = "text" placeholder="Enter the text to convert into code" >
+                        </div>
+                        <div class="col-sm-2">
+                          <button class="btn btn-outline-success" type="submit" style="margin-left:-20px;">Search</button>
+                        </div>
+                      </div>
+                  </form>
+                {% if flag %}
+                <div class="row">
+                    <div class="col-md-8"><img src="{% static 'code_scanner/images/code.png' %}"></div>
+                    <div class="col-md-4">
+                     
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-4"></div>
+    
+        </div>
+    </div>
+</body>
+</html>
